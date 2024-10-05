@@ -1,9 +1,9 @@
 [Desktop Entry]
 Categories=Utility;System;
 Comment=A tool to make boot disk for Deepin OS
-Exec=deepin-boot-maker
+Exec=gxde-boot-maker
 GenericName=Boot Maker
-Icon=deepin-boot-maker
+Icon=gxde-boot-maker
 Name=Deepin Boot Maker
 StartupNotify=true
 Terminal=false

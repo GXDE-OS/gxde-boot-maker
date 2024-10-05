@@ -2,7 +2,7 @@ include($$PWD/vendor.pri)
 
 TEMPLATE  = app
 
-TARGET = deepin-boot-maker
+TARGET = gxde-boot-maker
 
 QT += core gui widgets concurrent network svg
 
@@ -46,13 +46,13 @@ HEADERS += $$PWD/linux/bmwindow.h
 linux {
 
 binary.path = $${PREFIX}/bin
-binary.files = $${OUT_PWD}/deepin-boot-maker
+binary.files = $${OUT_PWD}/gxde-boot-maker
 
 desktop.path = $${PREFIX}/share/applications
-desktop.files = $$PWD/platform/linux/deepin-boot-maker.desktop
+desktop.files = $$PWD/platform/linux/gxde-boot-maker.desktop
 
 hicolor.path =  $${PREFIX}/share/icons/hicolor/scalable/apps
-hicolor.files = $$PWD/view/resource/theme/light/image/deepin-boot-maker.svg
+hicolor.files = $$PWD/view/resource/theme/light/image/gxde-boot-maker.svg
 
 INSTALLS += binary desktop hicolor
 
@@ -62,19 +62,19 @@ win* {
     INCLUDEPATH += $$PWD/other
     HEADERS += $$PWD/other/bmwindow.h
     QMAKE_LFLAGS += /MANIFESTUAC:\"level=\'requireAdministrator\' uiAccess=\'false\'\"
-    RC_FILE += $$PWD/platform/windows/deepin-boot-maker.rc
+    RC_FILE += $$PWD/platform/windows/gxde-boot-maker.rc
 }
 
 mac* {
     CONFIG += app_bundle
 
-    ICON = $$PWD/platform/mac/deepin-boot-maker.icns
+    ICON = $$PWD/platform/mac/gxde-boot-maker.icns
 
     blob.files = $$files($$PWD/platform/mac/Contents/Resources/*)
     blob.path = Contents/Resources
 
     QMAKE_BUNDLE_DATA += blob
 
-    QMAKE_POST_LINK = macdeployqt deepin-boot-maker.app/ -libpath=/Users/deepin/Development/ci/usr/lib
+    QMAKE_POST_LINK = macdeployqt gxde-boot-maker.app/ -libpath=/Users/deepin/Development/ci/usr/lib
 }
 

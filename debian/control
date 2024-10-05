@@ -1,4 +1,4 @@
-Source: deepin-boot-maker
+Source: gxde-boot-maker
 Section: misc
 Priority: extra
 Maintainer: Deepin Sysdev <sysdev@linuxdeepin.com>
@@ -20,7 +20,7 @@ Build-Depends: debhelper (>= 9),
 Standards-Version: 3.9.5
 Homepage: http://www.linuxdeepin.com/
 
-Package: deepin-boot-maker
+Package: gxde-boot-maker
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, p7zip-full, mtools,
  syslinux [linux-amd64 linux-i386],

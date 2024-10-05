@@ -33,7 +33,7 @@ XSys::Result MountPartition(const QString &partition)
 
     QString mountPoint = XSys::DiskUtil::MountPoint(partition);
     if (mountPoint.isEmpty()) {
-        mountPoint = QString("%1").arg(XSys::FS::TmpFilePath("deepin-boot-maker"));
+        mountPoint = QString("%1").arg(XSys::FS::TmpFilePath("gxde-boot-maker"));
     }
 
     XSys::Result ret = XSys::SynExec("mkdir", QString(" -p %1").arg(mountPoint));

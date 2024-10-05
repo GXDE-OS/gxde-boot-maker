@@ -332,7 +332,7 @@ qint64 GetPartitionFreeSpace(const QString &targetDev)
 XSys::Result FixMountPartition(const QString &partition)
 {
     QString mountPoint = XSys::DiskUtil::MountPoint(partition);
-    mountPoint = QString("%1").arg(XSys::FS::TmpFilePath("deepin-boot-maker"));
+    mountPoint = QString("%1").arg(XSys::FS::TmpFilePath("gxde-boot-maker"));
 
     XSys::Result ret = XSys::SynExec("mkdir", QString(" -p %1").arg(mountPoint));
     if (!ret.isSuccess()) { return ret; }

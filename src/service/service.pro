@@ -5,7 +5,7 @@ QT -= gui
 
 CONFIG += c++11
 
-TARGET = deepin-boot-maker-service
+TARGET = gxde-boot-maker-service
 CONFIG += console
 CONFIG -= app_bundle
 
@@ -24,7 +24,7 @@ HEADERS += \
 
 unix{
 binary.path = $${PREFIX}/lib/deepin-daemon/
-binary.files = $${OUT_PWD}/deepin-boot-maker-service
+binary.files = $${OUT_PWD}/gxde-boot-maker-service
 
 service.path = $${PREFIX}/share/dbus-1/system-services/
 service.files = $$PWD/data/com.deepin.bootmaker.service

@@ -19,7 +19,7 @@
         <file>theme/light/image/dash_line.svg</file>
         <file>theme/light/image/button_normal.svg</file>
         <file>theme/light/image/glow.svg</file>
-        <file>theme/light/image/deepin-boot-maker.svg</file>
+        <file>theme/light/image/gxde-boot-maker.svg</file>
         <file>theme/light/image/dash.svg</file>
     </qresource>
 </RCC>

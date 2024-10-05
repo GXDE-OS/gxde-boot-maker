@@ -23,6 +23,7 @@
 
 #include <QtCore>
 
+#include "dobject.h"
 #include <Logger.h>
 #include <ConsoleAppender.h>
 #include <RollingFileAppender.h>

@@ -89,16 +89,16 @@ void loadTranslate()
 //    tnapplang = "it";
 //    tnappcoun = "IT";
     if (!tnappcoun.isEmpty()) {
-        tranlateUrl = QString(":/translations/deepin-boot-maker_%1_%2.qm").arg(tnapplang).arg(tnappcoun);
+        tranlateUrl = QString(":/translations/gxde-boot-maker_%1_%2.qm").arg(tnapplang).arg(tnappcoun);
     }
 
     if (!QFile::exists(tranlateUrl)) {
-        tranlateUrl = QString(":/translations/deepin-boot-maker_%1.qm").arg(tnapplang);
+        tranlateUrl = QString(":/translations/gxde-boot-maker_%1.qm").arg(tnapplang);
     }
 
 
     if (!QFile::exists(tranlateUrl)) {
-        tranlateUrl = ":/translations/deepin-boot-maker.qm";
+        tranlateUrl = ":/translations/gxde-boot-maker.qm";
     }
 
     qDebug() << "locate:" << clangcode;

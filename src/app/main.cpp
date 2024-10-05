@@ -85,8 +85,8 @@ int main(int argc, char **argv)
     DApplication app(argc, argv);
     app.setAttribute(Qt::AA_UseHighDpiPixmaps);
     app.setAttribute(Qt::AA_EnableHighDpiScaling);
-    app.setOrganizationName("deepin");
-    app.setApplicationName("deepin-boot-maker");
+    app.setOrganizationName("GXDE");
+    app.setApplicationName("gxde-boot-maker");
     app.setApplicationVersion("2.0.0");
     app.setTheme("light");
 
@@ -102,14 +102,14 @@ int main(int argc, char **argv)
     DLogManager::registerFileAppender();
     qDebug() << "save log to:" << DLogManager::getlogFilePath();
 
-    if (!app.setSingleInstance("deepinbootmaker")) {
+    if (!app.setSingleInstance("gxdebootmaker")) {
         qDebug() << "another deepin boot maker has started";
         exit(0);
     }
 
 #ifdef Q_OS_WIN
     Utils::loadFonts();
-    app.setWindowIcon(QIcon(":/theme/light/image/deepin-boot-maker.ico"));
+    app.setWindowIcon(QIcon(":/theme/light/image/gxde-boot-maker.ico"));
 #endif
     app.loadTranslator();
     Utils::loadTranslate();

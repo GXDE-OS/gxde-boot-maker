@@ -81,5 +81,5 @@ mkdir build
 cd build
 qmake -r ..
 make
-macdeployqt src/app/deepin-boot-maker.app
+macdeployqt src/app/gxde-boot-maker.app
 ```

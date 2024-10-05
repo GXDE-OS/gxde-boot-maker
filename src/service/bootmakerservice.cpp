@@ -188,7 +188,7 @@ bool BootMakerServicePrivate::checkCaller()
 
     auto callerPid = static_cast<int>(q->connection().interface()->servicePid(q->message().service()).value());
     auto callerExe = getProcIdExe(callerPid);
-    auto dbmExe = "/usr/bin/deepin-boot-maker";
+    auto dbmExe = "/usr/bin/gxde-boot-maker";
 //    auto dbmPid = getProcIdByExeName();
 
     qDebug() << "callerPid is: " << callerPid  << "callerExe is:" << callerExe.c_str() ;

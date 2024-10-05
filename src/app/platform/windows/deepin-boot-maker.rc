@@ -1,6 +1,6 @@
 #include <windows.h>
 
-IDI_APPICON ICON  "deepin-boot-maker.ico"
+IDI_APPICON ICON  "gxde-boot-maker.ico"
 
 VS_VERSION_INFO    VERSIONINFO
 FILEVERSION 1,9,0,1
@@ -16,7 +16,7 @@ PRODUCTVERSION 1,9,0,1
 			VALUE "InternalName", "Deepin Boot Maker"
 			VALUE "LegalCopyright", "Copyright - Deepin - License - GNU GPL v3"
 			VALUE "LegalTrademarks", " "
-			VALUE "OriginalFilename", "deepin-boot-maker.exe"
+			VALUE "OriginalFilename", "gxde-boot-maker.exe"
 			VALUE "ProductName", "Deepin Boot Maker"
 			VALUE "ProductVersion", "1.9.0.1"
 		}

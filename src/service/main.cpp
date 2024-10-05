@@ -39,8 +39,8 @@ int main(int argc, char *argv[])
     Utils::initResource();
 
     QCoreApplication a(argc, argv);
-    a.setOrganizationName("deepin");
-    a.setApplicationName("deepin-boot-maker-service");
+    a.setOrganizationName("GXDE");
+    a.setApplicationName("gxde-boot-maker-service");
     BootMakerService service;
 
     const QString m_format = "%{time}{yyyyMMdd.HH:mm:ss.zzz}[%{type:1}][%{function:-35} %{line:-4} %{threadid} ] %{message}\n";

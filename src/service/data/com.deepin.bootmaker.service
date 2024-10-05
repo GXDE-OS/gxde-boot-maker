@@ -1,4 +1,4 @@
 [D-BUS Service]
 Name=com.deepin.bootmaker
-Exec=/usr/lib/deepin-daemon/deepin-boot-maker-service
+Exec=/usr/lib/deepin-daemon/gxde-boot-maker-service
 User=root

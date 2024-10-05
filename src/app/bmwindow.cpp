@@ -114,11 +114,11 @@ BMWindow::BMWindow(QWidget *parent)
     d->interface = BMInterface::instance();
 
     // init about info
-    QString descriptionText = tr("Deepin Boot Maker is a simple tool to write system image file into CD/DVD, USB drive and other installation medias.");
-    QString acknowledgementLink = "https://www.deepin.org/acknowledgments/deepin-boot-maker#thanks";
-    qApp->setProductName(tr("Deepin Boot Maker"));
+    QString descriptionText = tr("GXDE Boot Maker is a simple tool to write system image file into CD/DVD, USB drive and other installation medias.");
+    QString acknowledgementLink = "https://gitee.com/GXDE-OS/gxde-boot-maker";
+    qApp->setProductName(tr("GXDE Boot Maker"));
     qApp->setApplicationAcknowledgementPage(acknowledgementLink);
-    qApp->setProductIcon(QIcon(":/theme/light/image/deepin-boot-maker.svg"));
+    qApp->setProductIcon(QIcon(":/theme/light/image/gxde-boot-maker.svg"));
     qApp->setApplicationDescription(descriptionText);
 
     auto title = titlebar();
@@ -138,7 +138,7 @@ BMWindow::BMWindow(QWidget *parent)
 #endif
 
     title->setTitle("");
-    title->setIcon(QIcon(":/theme/light/image/deepin-boot-maker.svg"));
+    title->setIcon(QIcon(":/theme/light/image/gxde-boot-maker.svg"));
     title->setBackgroundTransparent(true);
 
     QVBoxLayout *mainLayout = new QVBoxLayout();

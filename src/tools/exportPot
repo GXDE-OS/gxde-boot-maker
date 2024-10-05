@@ -3,8 +3,8 @@
 qtlupdate=lupdate
 qtlrelease=lrelease
 qtlconvert=lconvert
-tsfile=po/deepin-boot-maker.ts
+tsfile=po/gxde-boot-maker.ts
 $qtlupdate $1 -target-language en_US -ts $tsfile
-$qtlconvert -i $tsfile -if ts -o po/deepin-boot-maker.pot -of po
+$qtlconvert -i $tsfile -if ts -o po/gxde-boot-maker.pot -of po
 rm $tsfile
 
