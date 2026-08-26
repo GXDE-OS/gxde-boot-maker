@@ -42,7 +42,10 @@ static Result runApp(const QString &execPath, const QString &execParam, const QS
     app.setStandardInputFile(execPipeIn);
 //    app.setStandardOutputFile(outPipePath);
 //    app.setStandardErrorFile(outPipePath);
-    app.start("\"" + execPath + "\"" + " " + execParam);
+    // 尝试修复制作失败的问题
+    app.setProgram(execPath);
+    app.setArguments(QProcess::splitCommand(execParam));
+    app.start();
     if (!app.waitForStarted()) {
         qWarning() << "Cmd Exec Failed:" << app.errorString();
         return Result(Result::Faiiled, app.errorString(), "", app.program());
