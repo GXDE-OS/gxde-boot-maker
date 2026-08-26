@@ -15,4 +15,4 @@ tslist = fnmatch.filter(os.listdir(translations_dir), '*.ts')
 for tsfile in tslist:
     tspath = translations_dir + "/" + tsfile
     print ("process", tspath)
-    call(["lrelease", tspath])
+    call(["/usr/lib/qt6/bin/lrelease", tspath])

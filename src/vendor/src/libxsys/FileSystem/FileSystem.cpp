@@ -28,10 +28,12 @@
 #include <QFileInfo>
 #include <QDir>
 #include <QCryptographicHash>
+#include <QLocale>
+#include <QRandomGenerator>
 
 static QString randString(const QString &str)
 {
-    QString seedStr = str + QTime::currentTime().toString(Qt::SystemLocaleLongDate) + QString("%1").arg(qrand());
+    QString seedStr = str + QLocale::system().toString(QTime::currentTime(), QLocale::LongFormat) + QString("%1").arg(QRandomGenerator::global()->generate());
     return QString("").append(QCryptographicHash::hash(seedStr.toLatin1(), QCryptographicHash::Md5).toHex());
 }
 

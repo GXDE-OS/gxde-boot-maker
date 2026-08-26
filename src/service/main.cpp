@@ -34,8 +34,6 @@ const QString BootMakerPath = "/com/deepin/bootmaker";
 
 int main(int argc, char *argv[])
 {
-    QTextCodec::setCodecForLocale(QTextCodec::codecForName("UTF-8"));
-
     Utils::initResource();
 
     QCoreApplication a(argc, argv);

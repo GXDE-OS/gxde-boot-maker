@@ -3,7 +3,7 @@ include($$PWD/vendor.pri)
 QT += core dbus
 QT -= gui
 
-CONFIG += c++11
+CONFIG += c++17
 
 TARGET = gxde-boot-maker-service
 CONFIG += console

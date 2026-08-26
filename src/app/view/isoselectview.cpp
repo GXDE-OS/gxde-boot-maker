@@ -63,7 +63,7 @@ ISOSelectView::ISOSelectView(QWidget *parent) : QFrame(parent)
     isoPanel->setFixedSize(412, 322);
 
     QVBoxLayout *isoPanelLayout = new QVBoxLayout(isoPanel);
-    isoPanelLayout->setMargin(0);
+    isoPanelLayout->setContentsMargins(0, 0, 0, 0);
 
     m_fileLabel = new QLabel(tr("Drag an ISO image file and drop it here"));
     m_fileLabel->setObjectName("IsoFileName");

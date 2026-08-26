@@ -88,7 +88,7 @@ bool SevenZip::extract()
     m_sevenz.waitForStarted(-1);
 
 #ifdef Q_OS_LINUX
-    QProcess::execute(QString("ionice -c3 -p %1").arg(m_sevenz.pid()));
+    QProcess::execute(QString("ionice -c3 -p %1").arg(m_sevenz.processId()));
 #endif
 
     m_szpp->setProgressName(progress.fileName());
@@ -118,7 +118,7 @@ bool SevenZip::check()
     m_sevenz.waitForStarted(-1);
 
 #ifdef Q_OS_LINUX
-    QProcess::execute(QString("ionice -c3 -p %1").arg(m_sevenz.pid()));
+    QProcess::execute(QString("ionice -c3 -p %1").arg(m_sevenz.processId()));
 #endif
 
     m_sevenz.waitForFinished(-1);

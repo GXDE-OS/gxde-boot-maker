@@ -34,6 +34,8 @@ public:
     explicit BMInterface(QObject *parent = 0);
     ~BMInterface();
 
+    static BMInterface *instance() { return &Dtk::Core::DSingleton<BMInterface>::ref(); }
+
     static void initResources()
     {
 #if defined(STATIC_LIB)

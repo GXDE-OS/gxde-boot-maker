@@ -25,6 +25,7 @@
 
 #include <QtCore>
 #include <QString>
+#include <QRegularExpression>
 
 #ifdef Q_OS_WIN32
 #include <Windows.h>
@@ -258,7 +259,7 @@ bool isUsbDisk(const QString &dev)
     QString info = outfile.readAll();
     outfile.close();
     outfile.remove();
-    return info.contains(QRegExp("Protocol:\\s+USB"));
+    return info.contains(QRegularExpression("Protocol:\\s+USB"));
 }
 
 QList<DeviceInfo> ListUsbDrives()
@@ -292,7 +293,7 @@ QList<DeviceInfo> ListUsbDrives()
     QMap<QString, QString> removeDevice;
 
     for (int i = 0; i < usbfileinfoL.size(); ++i) {
-        if (usbfileinfoL.at(i).fileName().contains(QRegExp("^usb-\\S{1,}$")) || usbfileinfoL.at(i).fileName().contains(QRegExp("^mmc-\\S{1,}$"))) {
+        if (usbfileinfoL.at(i).fileName().contains(QRegularExpression("^usb-\\S{1,}$")) || usbfileinfoL.at(i).fileName().contains(QRegularExpression("^mmc-\\S{1,}$"))) {
             QString path = usbfileinfoL.at(i).canonicalFilePath();
             removeDevice.insert(path, usbfileinfoL.at(i).fileName());
         }
@@ -337,7 +338,7 @@ QList<DeviceInfo> ListUsbDrives()
     QFile outfile(out);
     outfile.open(QIODevice::ReadOnly);
     QString diskutilList = outfile.readAll();
-    QStringList usbdevsL = diskutilList.split("\n").filter(QRegExp("(FAT|Microsoft)")).join(" ").split(" ").filter("disk");
+    QStringList usbdevsL = diskutilList.split("\n").filter(QRegularExpression("(FAT|Microsoft)")).join(" ").split(" ").filter("disk");
 
     for (int i = 0; i < usbdevsL.size(); ++i) {
         if (isUsbDisk("/dev/" + usbdevsL.at(i))) {

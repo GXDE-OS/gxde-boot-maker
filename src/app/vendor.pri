@@ -1,6 +1,6 @@
 include($$PWD/../vendor/env.pri)
 
-QT += dtkwidget
+QT += dtk2widget
 
 unix{
     QT += network
@@ -8,9 +8,9 @@ unix{
 }
 
 linux{
-    QT += x11extras dbus x11extras
+    QT += dbus
     CONFIG += link_pkgconfig
-    PKGCONFIG += dtkwidget
+    QT += dtk2widget
     PKGCONFIG += xcb-util libstartup-notification-1.0
     LIBS += -lxcb -lX11 -lXext
 }
