@@ -1,10 +1,11 @@
-gxde-boot-maker (2.0.5.4) UNRELEASED; urgency=medium
+gxde-boot-maker (3.0.0) UNRELEASED; urgency=medium
 
   * 新增支持设置背景图片标签 
   * 将默认卷标设置为GXDEOS
   * 完善翻译
+  * Qt6 迁移
 
- -- gfdgd_xi <3025613752@qq.com>  Sat, 11 Jul 2026 13:51:30 +0800
+ -- gfdgd_xi <3025613752@qq.com>  Wed, 26 Aug 2026 22:35:59 +0800
 
 gxde-boot-maker (1.9.0-1) stable; urgency=low
 
