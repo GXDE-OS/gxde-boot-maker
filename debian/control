@@ -19,6 +19,8 @@ Build-Depends: debhelper (>= 9),
  qt6-wayland-private-dev,
  qt6-wayland-dev,
  qt6-multimedia-dev,
+ qt6-svg-dev,
+ qt6-scxml-dev,
 Standards-Version: 3.9.5
 Homepage: http://gitee.com/GXDE-OS/gxde-boot-maker
 
