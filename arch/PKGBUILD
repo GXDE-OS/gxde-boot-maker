@@ -1,0 +1,49 @@
+# Maintainer: CharOfString <root@charofstring.cc>
+pkgname=gxde-boot-maker-git
+pkgver=3.0.1
+pkgrel=1
+pkgdesc='Tool to create bootable USB drives for GXDE'
+arch=('x86_64' 'aarch64')
+url="https://github.com/GXDE-OS/gxde-boot-maker"
+license=('GPL-3.0-or-later')
+# 制作启动盘时调用的工具：7z、mtools（debian/control 中的依赖）以及 mkfs.fat/fatlabel、partprobe、
+# sfdisk/blkid/lsblk；syslinux 只在 x86 上有意义，Arch Linux ARM 也不提供
+# Tools run while writing the drive: 7z and mtools (the depends in
+# debian/control), plus mkfs.fat/fatlabel, partprobe and sfdisk/blkid/lsblk.
+# syslinux only matters on x86 and Arch Linux ARM does not ship it.
+depends=('dtk2widget-qt6-git' 'dtk6core-git' 'qt6-base' 'qt6-svg' 'libxcb' 'libx11' 'libxext'
+         'startup-notification' '7zip' 'mtools' 'dosfstools' 'parted' 'util-linux' 'hicolor-icon-theme'
+         'libgcc' 'libstdc++' 'glibc')
+depends_x86_64=('syslinux')
+makedepends=('git' 'pkgconf' 'python' 'qt6-tools')
+provides=('gxde-boot-maker')
+conflicts=('gxde-boot-maker')
+source=()
+sha512sums=()
+
+# 直接使用 PKGBUILD 所在的 git 仓库作为源码 ・ Build from the git checkout this PKGBUILD lives in.
+_srcroot() {
+  git -C "$startdir" rev-parse --show-toplevel
+}
+
+build() {
+  # 与 debian/rules 相同（qmake6） ・ Same as debian/rules (qmake6).
+  mkdir -p build
+  cd build
+  qmake6 "$(_srcroot)/gxde-boot-maker.pro" \
+    PREFIX=/usr \
+    QMAKE_CFLAGS_RELEASE="$CFLAGS" \
+    QMAKE_CXXFLAGS_RELEASE="$CXXFLAGS" \
+    QMAKE_LFLAGS_RELEASE="$LDFLAGS"
+  make
+  # app.pro 与 service.pro 用 $${OUT_PWD}/<程序> 安装，qmake 生成 Makefile 时文件尚不存在，
+  # 不会生成安装规则；构建后重新生成 Makefile，安装时才会包含程序
+  # app.pro and service.pro install $${OUT_PWD}/<binary>, which does not exist
+  # yet when qmake writes the Makefiles, so no install rule is made for it.
+  # Regenerate the Makefiles after the build so the binaries get installed.
+  make qmake_all
+}
+
+package() {
+  make -C build INSTALL_ROOT="$pkgdir" install
+}
