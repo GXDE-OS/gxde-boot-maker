@@ -1,5 +1,5 @@
 # Maintainer: CharOfString <root@charofstring.cc>
-pkgname=gxde-boot-maker-git
+pkgname=gxde-boot-maker
 pkgver=3.0.1
 pkgrel=1
 pkgdesc='Tool to create bootable USB drives for GXDE'
@@ -11,13 +11,14 @@ license=('GPL-3.0-or-later')
 # Tools run while writing the drive: 7z and mtools (the depends in
 # debian/control), plus mkfs.fat/fatlabel, partprobe and sfdisk/blkid/lsblk.
 # syslinux only matters on x86 and Arch Linux ARM does not ship it.
-depends=('dtk2widget-qt6-git' 'dtk6core-git' 'qt6-base' 'qt6-svg' 'libxcb' 'libx11' 'libxext'
+depends=('dtk2widget-qt6' 'gxde-dtk6core' 'qt6-base' 'qt6-svg' 'libxcb' 'libx11' 'libxext'
          'startup-notification' '7zip' 'mtools' 'dosfstools' 'parted' 'util-linux' 'hicolor-icon-theme'
          'libgcc' 'libstdc++' 'glibc')
 depends_x86_64=('syslinux')
 makedepends=('git' 'pkgconf' 'python' 'qt6-tools')
-provides=('gxde-boot-maker')
-conflicts=('gxde-boot-maker')
+provides=("gxde-boot-maker-git=$pkgver")
+conflicts=('gxde-boot-maker-git')
+replaces=('gxde-boot-maker-git')
 source=()
 sha512sums=()
 
